@@ -9,4 +9,6 @@ export const authMiddleware: MiddlewareFn<Context> = async (ctx, next) => {
     );
     return next();
   }
+
+  console.info(`User ${ctx.from!.id.toString()} attempted to engage...`);
 };
