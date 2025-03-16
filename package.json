@@ -1,0 +1,27 @@
+{
+  "name": "telegram-translator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^8.5.1",
+    "@vercel/postgres-kysely": "^0.10.0",
+    "axios": "^0.21.1",
+    "kysely": "^0.27.6",
+    "next": "latest",
+    "openai": "^4.87.3",
+    "react": "latest",
+    "react-dom": "latest",
+    "telegraf": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "prettier": "^3.5.3",
+    "typescript": "latest"
+  }
+}
