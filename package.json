@@ -12,7 +12,7 @@
     "@vercel/postgres-kysely": "^0.10.0",
     "axios": "^0.21.1",
     "kysely": "^0.27.6",
-    "next": "latest",
+    "next": "15.2.6",
     "openai": "^4.87.3",
     "react": "latest",
     "react-dom": "latest",
