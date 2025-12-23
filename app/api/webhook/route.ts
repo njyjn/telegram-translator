@@ -20,8 +20,11 @@ bot.on(message("text"), async (ctx) => {
   const message = ctx.message.text;
   let translatedMessage;
 
-  // Check the language of the incoming message and translate accordingly
-  if (isEnglish(message)) {
+  // Skip translation for URL-only messages
+  if (isUrlOnly(message)) {
+    console.info("Message is URL-only, skipping translation");
+    translatedMessage = message;
+  } else if (isEnglish(message)) {
     console.info("Translating from English to Burmese");
     translatedMessage = await translateText(message, "en", "my"); // English to Burmese
   } else {
@@ -39,6 +42,12 @@ bot.on(message("text"), async (ctx) => {
 // Function to determine if the message is in English
 function isEnglish(text: string): boolean {
   return /^[A-Za-z0-9\s.,!?'"()]+$/.test(text);
+}
+
+// Function to determine if the message is URL-only
+function isUrlOnly(text: string): boolean {
+  const urlPattern = /^https?:\/\/[^\s]+$/;
+  return urlPattern.test(text);
 }
 
 export async function POST(req: NextRequest) {
